@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import Board from "./Board";
 import { checkWinner, initialState } from "../utils/tictactoeutils";
 
-const TicTacToe = ({ size = 3 }) => {
+const TicTacToe = ({ size }) => {
   // creating the board of size
   const [board, setBoard] = useState(initialState(size));
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const [turnX, setTurnX] = useState(true);
 
@@ -26,12 +27,16 @@ const TicTacToe = ({ size = 3 }) => {
   };
 
   const handleReset = () => {
-    setBoard(initialState(size));
-    setTurnX(true);
+    setIsAnimating(true); // Start animation when resetting the board
+    setTimeout(() => {
+      setBoard(initialState(size));
+      setTurnX(true);
+      setIsAnimating(false); // End animation after the reset
+    }, 300); // Match this with your animation duration
   };
 
   return (
-    <div className="tictactoe__container">
+    <div className={`tictactoe__container ${isAnimating ? "shake-fade" : ""}`}>
       <Board handleClick={handleClick} board={board} size={size} />
       <div>{status}</div>
       <div className="reset-btn" onClick={handleReset}>

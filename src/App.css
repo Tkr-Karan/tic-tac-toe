@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  background-color: beige;
 }
 
 .cell__container {
@@ -15,8 +16,41 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+
 }
 
+.tictactoe__container {
+  position: relative;
+  transition: transform 0.5s ease-out;
+}
+
+/* Shaking and fading animation */
+.shake-fade {
+  animation: shake-fade 0.5s forwards;
+}
+
+@keyframes shake-fade {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  25% {
+    transform: translateX(-10px);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateX(10px);
+    opacity: 0.6;
+  }
+  75% {
+    transform: translateX(-10px);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+}
 .board__container {
   display: flex;
   flex-direction: column;
