@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import styles from "./BoardInput.module.css";
 
 const BoardInput = ({ getInputValue, isAnimating }) => {
-  const [inputValue, setInputValue] = useState(3);
+  const [inputValue, setInputValue] = useState("");
 
   const handleChange = (e) => {
     const value = parseInt(e.target.value, 10);
-    if (value > 10 || value < 1) return;
+    if (value > 10 || value < 2) return;
     setInputValue(value);
   };
 
   const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
+    if (e.key === "Enter" && inputValue >= 2) {
       const data = {
         data: false,
         value: inputValue,
