@@ -27,7 +27,7 @@ const BoardInput = ({ getInputValue, isAnimating }) => {
       }`}
     >
       <h3 className={styles["board__input-heading"]}>
-        Set the size of your game board
+        Set the size of your board
       </h3>
       <input
         className={styles["board__input-container"]}
