@@ -1,0 +1,32 @@
+.Chat__box-container {
+  width: 250px;
+  height: 400px;
+  border: 2px solid lightblue;
+  position: relative;
+}
+
+.Chat__box-mesages-container {
+  height: 332px;
+  overflow-y: scroll;
+}
+
+.button-disabled {
+  background: #b9b5b5;
+  border: none;
+  padding: 0 1rem;
+  margin: 0.25rem;
+  border-radius: 3px;
+  outline: none;
+  color: #fff;
+  cursor: no-drop;
+}
+
+.button-enabled {
+  background: #333;
+  border: none;
+  padding: 0 1rem;
+  margin: 0.25rem;
+  border-radius: 3px;
+  outline: none;
+  color: #fff;
+}
