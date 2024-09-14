@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Board from "./Board";
 import { checkWinner, initialState } from "../utils/tictactoeutils";
+import { ChatBox } from "../Organisms/ChatBox/ChatBox";
 
 const TicTacToe = ({ size }) => {
   // creating the board of size
@@ -37,11 +38,15 @@ const TicTacToe = ({ size }) => {
 
   return (
     <div className={`tictactoe__container ${isAnimating ? "shake-fade" : ""}`}>
-      <Board handleClick={handleClick} board={board} size={size} />
-      <div>{status}</div>
-      <div className="reset-btn" onClick={handleReset}>
-        reset
+      <div className={'tictactoe__box'}>
+        <Board handleClick={handleClick} board={board} size={size} />
+        <div>{status}</div>
+        <div className="reset-btn" onClick={handleReset}>
+          reset
+        </div>
       </div>
+
+      <ChatBox />
     </div>
   );
 };
