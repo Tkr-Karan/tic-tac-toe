@@ -50,6 +50,7 @@ export const ChatBox = () => {
 
   return (
     <div className={styles["Chat__box-container"]}>
+      <div className={styles['Chat__box-no-work']}>Coming Soon</div>
       ChatBox
       <div>
         <form id="form" onSubmit={handleSubmit}>

@@ -12,16 +12,16 @@
   gap: 8px;
 }
 
-.tictactoe__box{
+.tictactoe__box {
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 
 .tictactoe__container {
   display: flex;
-  /* flex-direction: column; */
   gap: 50px;
-
+  align-items: center;
 }
 
 .tictactoe__container {
@@ -93,8 +93,6 @@
   cursor: pointer;
   margin: auto;
 }
-
-
 
 #form {
   background: rgba(0, 0, 0, 0.15);
