@@ -13,7 +13,10 @@ export const ChatBox = () => {
 
   useEffect(() => {
     // Establish socket connection on mount
-    const newSocket = io("https://socketchat-server.vercel.app/");
+    const newSocket = io("https://socketchat-server.vercel.app/", {
+      transports: ["websocket", "polling"], // Use WebSocket first and fallback to polling
+      withCredentials: true, // If you're using cookies/sessions
+    });
     setSocket(newSocket);
 
     // Listen for messages from the server
