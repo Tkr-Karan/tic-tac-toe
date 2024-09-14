@@ -13,7 +13,7 @@ export const ChatBox = () => {
 
   useEffect(() => {
     // Establish socket connection on mount
-    const newSocket = io("http://localhost:9000");
+    const newSocket = io("https://socketchat-server.vercel.app/");
     setSocket(newSocket);
 
     // Listen for messages from the server
